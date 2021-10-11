@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;1,500&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'JetBrains Mono', monospace; /* background: #f3e0e2; */
+	background-image: url('bg.png'), linear-gradient(rgb(139, 139, 201), rgb(63, 98, 151));
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+	overflow: hidden;
+
+	background-color: rgb(196, 152, 152);
+	background-blend-mode: multiply;
+}
+
+/* color variables */
+/* border radius */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.form {
+	width: 45rem;
+	height: 45rem;
+	padding: 2rem;
+	border-radius: 1rem;
+	background-color: rgb(235, 236, 236);
+}
+.form__title {
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+.form__description {
+	margin-bottom: 2rem;
+	text-align: center;
+}
+.form__group {
+	position: relative;
+	height: 3rem;
+	margin-bottom: 1.5rem;
+}
+.form__input {
+	width: 100%;
+	height: 100%;
+	border: 2px solid #cfd8dc;
+	border-radius: 0.5rem;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	outline: none;
+	padding: 1.25rem;
+	background: none;
+}
+
+.form__area {
+	text-align: center;
+	width: 100%;
+	height: 200px;
+	border: 2px solid #cfd8dc;
+	border-radius: 1rem;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	margin-top: 5%;
+}
+.form__area:hover {
+	border-color: red;
+}
+.form__area:focus {
+	border-color: red;
+}
+textarea {
+	scroll-behavior: smooth;
+}
+.form__input:hover {
+	border-color: red;
+}
+.form__input:focus {
+	border-color: red;
+}
+
+.form__label {
+	position: absolute;
+	left: 1rem;
+	top: 0.9rem;
+	padding: 0 0.5rem;
+	background-color: white;
+	transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+.form__button {
+	margin-top: 37%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.75rem 2rem;
+	background-color: #9dedff;
+	font-family: inherit;
+	font-weight: inherit;
+	border-radius: 0.5rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: background-color 200ms ease-in;
+}
+
+.form__input2 {
+	height: 150%;
+}
+
+.form__button:hover {
+	background-color: #7bdff6;
+}
+/* 1. When the input is in the focus state reduce the size of the label and move upwards 2. Keep label state when content is in input field */
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+	top: -0.5rem;
+	left: 0.8rem;
+	font-size: 0.8rem;
+}
+textarea {
+	overflow: auto;
+	resize: none;
+}
