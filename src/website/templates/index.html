@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block title %} Ami Newsletter {% endblock %} {%
 block body %}
-<form action="POST" class="form">
+<form method="POST" class="form">
 	<p class="center">
 		<img
 			class="img_style"
@@ -12,7 +12,7 @@ block body %}
 	<p class="form__description">Collez les e-mails et les données ici</p>
 	<div class="form__group">
 		<input
-			name="objet"
+			name="object"
 			type="text"
 			id="Object"
 			class="form__input"
