@@ -1,93 +1,55 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<style></style>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link
-			rel="stylesheet"
-			href="{{ url_for('static', filename = 'style.css')}}"
+{% extends 'base.html' %} {% block title %} Ami Newsletter {% endblock %} {%
+block body %}
+<form action="POST" class="form">
+	<p class="center">
+		<img
+			class="img_style"
+			src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
+			alt=""
 		/>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-			crossorigin="anonymous"
+	</p>
+	<h1 class="form__title">Ami auto-mail</h1>
+	<p class="form__description">Collez les e-mails et les données ici</p>
+	<div class="form__group">
+		<input
+			name="objet"
+			type="text"
+			id="Object"
+			class="form__input"
+			placeholder=" "
+			autocomplete="off"
 		/>
-		<link
-			rel="shortcut icon"
-			href="{{ url_for('static', filename = 'logo.png')}}"
-			type="image/x-icon"
+		<label for="Object" class="form__label">Objet</label>
+	</div>
+	<div class="form__group">
+		<input
+			type="text"
+			id="content"
+			name="content"
+			class="form__input form__input2"
+			placeholder=" "
+			autocomplete="off"
 		/>
-		<title>Ami Newsletter</title>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,700"
-		/>
-	</head>
-
-	<body>
-		<!-- <h1 class="h1 text-center text-warning font-monospace mb-5">Ami news letter</h1> -->
-		<form action="POST" class="form">
-			<p class="center">
-				<img
-					class="img_style"
-					src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
-					alt=""
-				/>
-			</p>
-			<h1 class="form__title">Ami auto-mail</h1>
-			<p class="form__description">Collez les e-mails et les données ici</p>
-
-			<div class="form__group">
-				<input
-					name="objet"
-					type="text"
-					id="Object"
-					class="form__input"
-					placeholder=" "
-					autocomplete="off"
-				/>
-				<label for="Object" class="form__label">Objet</label>
-			</div>
-			<div class="form__group">
-				<input
-					type="text"
-					id="content"
-					name="content"
-					class="form__input form__input2"
-					placeholder=" "
-					autocomplete="off"
-				/>
-				<label for="content" class="form__label">Contenu</label>
-			</div>
-
-			<div class="form__group">
-				<textarea
-					class="form__area"
-					id="area"
-					name="emails"
-					cols="40"
-					rows="40"
-				></textarea>
-				<label for="area" class="form__label2">E-mails:</label>
-			</div>
-
-			<button class="form__button">Envoyer</button>
-
-			<img
-				class="img_style"
-				src="{{ url_for('static', filename = 'logo.png')}}"
-				alt="Logo"
-				class=""
-			/>
-		</form>
-		<p class="copyrights">© Mouhib Ouni 2021</p>
-	</body>
-	<script src="script.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous"
-	></script>
-</html>
+		<label for="content" class="form__label">Contenu</label>
+	</div>
+	<div class="form__group">
+		<textarea
+			class="form__area"
+			id="area"
+			name="emails"
+			cols="40"
+			rows="40"
+		></textarea>
+		<label for="area" class="form__label2">E-mails:</label>
+	</div>
+	<button class="form__button">Envoyer</button>
+	<img
+		class="img_style"
+		src="{{ url_for('static', filename = 'logo.png')}}"
+		alt="Logo"
+		class=""
+	/>
+</form>
+<p class="copyrights">© Mouhib Ouni 2021</p>
+<script src="script.js"></script>
+{% endblock %}
