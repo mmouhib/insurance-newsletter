@@ -1,53 +1,57 @@
-{% extends 'base.html' %} {% block title %} Ami Newsletter {% endblock %} {%
+{% extends 'base.html' %}
+
+{% block title %} Ami Newsletter {% endblock %} {%
 block body %}
-<form method="POST" class="form">
-	<p class="center">
-		<img
-			class="img_style"
-			src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
-			alt=""
-		/>
-	</p>
-	<h1 class="form__title">Ami auto-mail</h1>
-	<p class="form__description">Collez les e-mails et les données ici</p>
-	<div class="form__group">
-		<input
-			name="object"
-			type="text"
-			id="Object"
-			class="form__input"
-			placeholder=" "
-			autocomplete="off"
-		/>
-		<label for="Object" class="form__label">Objet</label>
-	</div>
-	<div class="form__group">
-		<input
-			type="text"
-			id="content"
-			name="content"
-			class="form__input form__input2"
-			placeholder=" "
-			autocomplete="off"
-		/>
-		<label for="content" class="form__label">Contenu</label>
-	</div>
-	<div class="form__group">
-		<textarea
-			class="form__area"
-			id="area"
-			name="emails"
-			cols="40"
-			rows="40"
-		></textarea>
-		<label for="area" class="form__label2">E-mails:</label>
-	</div>
-	<button class="form__button">Envoyer</button>
-	<img
-		class="img_style"
-		src="{{ url_for('static', filename = 'logo.png')}}"
-		alt="Logo"
-    />
-</form>
-<p class="copyrights">© Mouhib Ouni 2021</p>
+	<form method="POST">
+			<div class="text-center">
+				<img
+					class="img_style topdiv"
+					src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
+                />
+			</div>
+			<h1 class="h1 text-center">Ami Auto-Mail</h1>
+			<h1 class="h5 text-center">Collez les donnees ici</h1>
+			<!-- Name input -->
+			<div class="form-outline mb-4">
+				<input
+					type="text"
+					id="subject"
+					name="object"
+					class="form-control rounded border-success"
+				/>
+				<label class="form-label" for="subject">Name</label>
+			</div>
+			<!-- Email input -->
+			<div class="form-outline mb-4">
+				<input
+					type="text"
+					id="content"
+					name="content"
+					class="form-control border-2 rounded border-success"
+				/>
+				<label class="form-label" for="content">Email address</label>
+			</div>
+			<!-- Message input -->
+			<div class="form-outline mb-4">
+				<textarea
+					class="form-control border-2 rounded border-success textarea"
+					id="emails"
+					rows="4"
+					name="emails"
+                ></textarea>
+				<label class="form-label" for="emails">Message</label>
+			</div>
+			<!-- Submit button -->
+			<div class="text-center">
+
+				<button type="submit" class="btn btn-danger btn-block mb-4">
+					Send
+				</button>
+                <br />
+				<button type="reset" class="btn border-2 btn-primary btn-block mb-4">
+					Reset
+				</button>
+			</div>
+		</form>
+		<h6 class="copyrights">© Mouhib Ouni 2021</h6>
 {% endblock %}

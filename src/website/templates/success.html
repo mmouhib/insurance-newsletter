@@ -1,23 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Success {% endblock %} {% block body %}
-<div class="contain">
-	<div class="mx-5 img">
-		<img
-			src="{{ url_for('static', filename = 'success.png')}}"
-			alt=""
-			class="mx-5"
-		/>
-	</div>
-	<h1 class="display-1 text-center">Envoi réussi</h1>
-	<div class="mx-5">
-		<div class="topcont mx-5">
-			<div class="mx-5 container">
-				<button id="return" class="mx-5 btn btn-danger">
-					Retour à la page d'accueil
-				</button>
-			</div>
-		</div>
-	</div>
+<div class="container text-center my-5">
+    <img src="https://raw.githubusercontent.com/mmouhib/insurance-newsletter/79bbebf7bc95b56e3b37ff8846742ce3888a2f9a/src/website/static/success.png?token=AOH3R42E4PX54ZI2YCWCMSDBOM5RS" class="mx-5"/>
+    <h1 class="display-1 font-weight-700 text-center">Envoi réussi</h1>
+    <button id="return" class="mx-5 btn btn-danger">
+        Retour à la page d'accueil
+    </button>
 </div>
 <script src="{{ url_for('static', filename = 'script.js')}}"></script>
 {% endblock %}
