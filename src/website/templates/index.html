@@ -2,7 +2,7 @@
 
 {% block title %} Ami Newsletter {% endblock %} {%
 block body %}
-	<form method="POST">
+	<form method="POST" enctype="multipart/form-data">
 			<div class="text-center">
 				<img
 					class="img_style topdiv"
@@ -17,7 +17,7 @@ block body %}
 					type="text"
 					id="subject"
 					name="object"
-					class="form-control rounded border-success"
+					class="form-control rounded border-danger"
 				/>
 				<label class="form-label" for="subject">Name</label>
 			</div>
@@ -27,31 +27,38 @@ block body %}
 					type="text"
 					id="content"
 					name="content"
-					class="form-control border-2 rounded border-success"
+					class="form-control border-2 rounded border-danger"
 				/>
 				<label class="form-label" for="content">Email address</label>
 			</div>
-			<!-- Message input -->
-			<div class="form-outline mb-4">
-				<textarea
-					class="form-control border-2 rounded border-success textarea"
-					id="emails"
-					rows="4"
-					name="emails"
+
+			<!-- submit content -->
+			<div class="form-outline mb-4 post">
+                <!-- text area -->
+                <div class="textarea">
+                    <textarea
+                    class="form-control border-2 rounded border-danger textarea"
+                    id="emails"
+                    rows="4"
+                    name="emails"
                 ></textarea>
-				<label class="form-label" for="emails">Message</label>
+                <label class="form-label" for="emails">Message</label>
+                </div>
+                <!-- Upload form -->
+                <input type="file" class="form-control mt-3 border-2 rounded border-danger" id="file" name="file" accept=".txt,.xlsx" />
+                <label class="form-label" for="file">Upload file</label>
 			</div>
+
 			<!-- Submit button -->
 			<div class="text-center">
-
-				<button type="submit" class="btn btn-danger btn-block mb-4">
+				<button type="submit" class="btn btn-primary btn-block mb-4">
 					Send
 				</button>
-                <br />
 				<button type="reset" class="btn border-2 btn-primary btn-block mb-4">
 					Reset
 				</button>
 			</div>
 		</form>
 		<h6 class="copyrights">© Mouhib Ouni 2021</h6>
+        <script src="{{ url_for('static', filename = 'index.js')}}"></script>
 {% endblock %}
