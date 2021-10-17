@@ -19,7 +19,7 @@ block body %}
 					name="object"
 					class="form-control rounded border-danger"
 				/>
-				<label class="form-label" for="subject">Sujet</label>
+				<label class="form-label" for="subject">Name</label>
 			</div>
 			<!-- Email input -->
 			<div class="form-outline mb-4">
@@ -29,15 +29,25 @@ block body %}
 					name="content"
 					class="form-control border-2 rounded border-danger"
 				/>
-				<label class="form-label" for="content">Content</label>
+				<label class="form-label" for="content">Email address</label>
 			</div>
+            <!-- todo change subject tag from input to textarea -->
+            <!-- tab selection buttons-->
+            <div class="tab_selection_btns text-center">
+                <button type="reset" id="textarea_btn" class="btn border-2 btn-primary btn-block mb-4">
+					Text Area
+				</button>
+                <button type="reset" id="upload_btn" class="btn border-2 btn-primary btn-block mb-4">
+					Upload
+				</button>
+            </div>
 
 			<!-- submit content -->
-			<div class="form-outline mb-4 post">
+			<div class="submit_content form-outline mb-4 post">
                 <!-- text area -->
                 <div class="textarea">
                     <textarea
-                    class="form-control border-2 rounded border-danger textarea"
+                    class="text_zone form-control border-2 rounded border-danger textarea"
                     id="emails"
                     rows="4"
                     name="emails"
@@ -45,8 +55,10 @@ block body %}
                 <label class="form-label" for="emails">Message</label>
                 </div>
                 <!-- Upload form -->
-                <input type="file" class="form-control mt-3 border-2 rounded border-danger" id="file" name="file" accept=".txt,.xlsx" />
-                <label class="form-label" for="file">Upload file</label>
+                <div class="file_input">
+                    <input type="file" class="input_zone form-control mt-3 border-2 rounded border-danger" id="file" name="file" accept=".txt,.xlsx" />
+                    <label class="form-label" for="file">Upload file</label>
+                </div>
 			</div>
 
 			<!-- Submit button -->

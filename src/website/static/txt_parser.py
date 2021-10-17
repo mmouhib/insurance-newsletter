@@ -1,4 +1,4 @@
-def text(filename):
-    with open(filename) as f:
+def text(path):
+    with open(path) as f:
         content = f.readlines()
-    return content
+    return ''.join(content)  # converts list to str and returns it

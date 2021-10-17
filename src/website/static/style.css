@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;1,500&display=swap');
-
 body {
 	font-family: 'JetBrains Mono', monospace;
 	background-image: url('img/bg.png'),
@@ -38,12 +37,6 @@ form {
 	bottom: 0;
 	color: rgb(110, 110, 110);
 }
-
-
-
-.box__dragndrop,
-.box__uploading,
-.box__success,
-.box__error {
-  display: none;
+.textarea{
+	display: none;
 }

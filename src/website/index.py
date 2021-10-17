@@ -1,7 +1,9 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+import os
 from src.website.static import sender
 from src.website.static import txt_parser
-import os
+from src.website.static import excel_parser
+from flask import (Blueprint, render_template,
+                   request, redirect, url_for)
 
 index = Blueprint('index', __name__)
 
@@ -13,20 +15,19 @@ def home():
         content = request.form.get('content')
         emails = request.form.get('emails')
 
-        if request.files:
-            file = request.files['file']
-            cwd = os.getcwd() + r"/website/static/uploads"
-            file.save(os.path.join(cwd, file.filename))
-
-        #     if file.filename.rsplit('.', 1)[1].lower() == 'txt':
-        #         filetype = 'text'
-        #     else:
-        #         filetype = 'excel'
-        #
-        # if filetype == 'text':
-        emails = txt_parser.text(cwd+'/'+file.filename)
-
-        sender.mail_sending(subject, content, emails)
+        file = request.files['file']
+        if file:
+            cwd = os.getcwd() + r"\website\static\uploads"
+            file_path = os.path.join(cwd, file.filename)
+            file.save(file_path)
+            if file.filename.rsplit('.', 1)[1].lower() == 'txt':
+                filetype = 'text'
+            else:
+                filetype = 'excel'
+            print(txt_parser.text(file_path))
+            emails = txt_parser.text(file_path)
+            print(emails)
+        sender.mail_sending(subject, content, emails.strip())
         return redirect(url_for('index.success'))
     return render_template('index.html')
 
