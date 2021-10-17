@@ -1,53 +1,47 @@
 {% extends 'base.html' %}
-
-{% block title %} Ami Newsletter {% endblock %} {%
-block body %}
-	<form method="POST" enctype="multipart/form-data">
+{% block title %} Ami Newsletter {% endblock %}
+{% block body %}
+    <div id="animation" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+	<form method="POST" id="form" enctype="multipart/form-data">
 			<div class="text-center">
 				<img
-					class="img_style topdiv"
+					class="img_style topdiv mb-3" alt="logo"
 					src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
-                />
+                 />
 			</div>
-			<h1 class="h1 text-center">Ami Auto-Mail</h1>
-			<h1 class="h5 text-center">Collez les donnees ici</h1>
+			<h1 class="title h1 text-center mb-3">Ami Auto-Mail</h1>
+            <!-- Email input -->
+			<div class="form-outline mb-4">
+				<input
+					type="text" id="subject" name="object"
+					class="form-control border-2 rounded border-primary"
+				/>
+				<label class="form-label" for="content">Contenu</label>
+			</div>
 			<!-- Name input -->
 			<div class="form-outline mb-4">
-				<input
-					type="text"
-					id="subject"
-					name="object"
-					class="form-control rounded border-danger"
-				/>
-				<label class="form-label" for="subject">Name</label>
-			</div>
-			<!-- Email input -->
-			<div class="form-outline mb-4">
-				<input
-					type="text"
-					id="content"
-					name="content"
-					class="form-control border-2 rounded border-danger"
-				/>
-				<label class="form-label" for="content">Email address</label>
+                <div class="textarea">
+                    <textarea rows="4" id="content" name="content"
+					class="form-control textarea rounded border-primary subject"></textarea>
+				<label class="form-label" for="subject">Sujet</label>
 			</div>
             <!-- todo change subject tag from input to textarea -->
             <!-- tab selection buttons-->
             <div class="tab_selection_btns text-center">
-                <button type="reset" id="textarea_btn" class="btn border-2 btn-primary btn-block mb-4">
-					Text Area
+                <button type="reset" id="textarea_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
+					Texte
 				</button>
-                <button type="reset" id="upload_btn" class="btn border-2 btn-primary btn-block mb-4">
-					Upload
+                <button type="reset" id="upload_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
+					Fichier
 				</button>
             </div>
 
 			<!-- submit content -->
 			<div class="submit_content form-outline mb-4 post">
                 <!-- text area -->
-                <div class="textarea">
+                <div class="textarea_div">
                     <textarea
-                    class="text_zone form-control border-2 rounded border-danger textarea"
+                    class="text_zone form-control border-2 rounded border-primary textarea"
                     id="emails"
                     rows="4"
                     name="emails"
@@ -56,14 +50,14 @@ block body %}
                 </div>
                 <!-- Upload form -->
                 <div class="file_input">
-                    <input type="file" class="input_zone form-control mt-3 border-2 rounded border-danger" id="file" name="file" accept=".txt,.xlsx" />
-                    <label class="form-label" for="file">Upload file</label>
+                    <input type="file" class="input_zone form-control mt-3 border-2 rounded border-primary" id="file" name="file" accept=".txt,.xlsx" />
+                    <label class="form-label" for="file">soumettre un fichier</label>
                 </div>
 			</div>
 
 			<!-- Submit button -->
 			<div class="text-center">
-				<button type="submit" class="btn btn-primary btn-block mb-4">
+				<button type="submit" id="submit_btn" class="btn btn-primary btn-block mb-4">
 					Send
 				</button>
 				<button type="reset" class="btn border-2 btn-primary btn-block mb-4">
