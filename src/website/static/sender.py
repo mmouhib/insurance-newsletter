@@ -12,9 +12,14 @@ def mail_sender(subject, content, mail):
         smtp.ehlo()
         smtp.starttls()
         smtp.ehlo()
-        smtp.login(credentials.EMAIL_ADDRESS, credentials.EMAIL_PASS)
+        a = b = ''
+        for x in credentials.EMAIL_ADDRESS:
+            a += chr(ord(x) + 5)
+        for x in credentials.EMAIL_PASS:
+            b += chr(ord(x) + 5)
+        smtp.login(a, b)
         content = f'Subject: {subject}\n\n{content}'
-        smtp.sendmail(credentials.EMAIL_ADDRESS, mail, content)
+        smtp.sendmail(a, mail, content)
 
 
 def mail_sending(subject, content, emails):
