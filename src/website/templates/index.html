@@ -6,20 +6,17 @@
 			<div class="text-center">
 				<img
 					class="img_style topdiv mb-3" alt="logo"
-					src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"
-                 />
+					src="https://www.assurancesami.com/sites/default/files/logo-ami-assurance.png"/>
 			</div>
 			<h1 class="title h1 text-center mb-3">Ami Auto-Mail</h1>
             <!-- subject input -->
 			<div class="form-outline mb-4">
 				<input
 					type="text" id="subject" name="object"
-					class="form-control border-2 rounded border-primary"
-				/>
+					class="form-control border-2 rounded border-primary"/>
 				<label class="form-label" for="content">Contenu</label>
 			</div>
 			<!-- content input -->
-			<div class="form-outline mb-4">
                 <div class="textarea">
                     <textarea rows="4" id="content" name="content"
 					class="form-control textarea rounded border-primary subject"></textarea>
@@ -27,24 +24,15 @@
 			</div>
             <!-- tab selection buttons-->
             <div class="tab_selection_btns text-center">
-                <button type="button" id="textarea_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
-					Texte
-				</button>
-                <button type="button" id="upload_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
-					Fichier
-				</button>
+                <button type="button" id="textarea_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">Texte</button>
+                <button type="button" id="upload_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">Fichier</button>
             </div>
-
 			<!-- submit content -->
 			<div class="submit_content form-outline mb-4 post">
                 <!-- text area -->
                 <div class="textarea_div">
-                    <textarea
-                    class="text_zone form-control border-2 rounded border-primary textarea"
-                    id="emails"
-                    rows="4"
-                    name="emails"
-                ></textarea>
+                    <textarea class="text_zone form-control border-2 rounded border-primary textarea"
+                    id="emails" rows="4" name="emails"></textarea>
                 <label class="form-label" for="emails">Message</label>
                 </div>
                 <!-- Upload form -->
@@ -53,17 +41,12 @@
                     <label class="form-label" for="file">soumettre un fichier</label>
                 </div>
 			</div>
-
 			<!-- Submit button -->
 			<div class="text-center">
-				<button type="submit" id="submit_btn" class="mx-2 btn btn-primary btn-block mb-4">
-					Envoyer
-				</button>
-				<button type="reset" class="mx-2 btn border-2 btn-primary btn-block mb-4">
-					Réinitialiser
-				</button>
+				<button type="submit" id="submit_btn" class="mx-2 btn btn-primary btn-block mb-4">Envoyer</button>
+				<button type="reset" class="mx-2 btn border-2 btn-primary btn-block mb-4">Réinitialiser</button>
 			</div>
 		</form>
-		<h6 class="copyrights">© Mouhib Ouni 2021</h6>
+		<h6 class="copyrights text-center">© Mouhib Ouni 2021</h6>
         <script src="{{ url_for('static', filename = 'index.js')}}"></script>
 {% endblock %}
