@@ -19,5 +19,6 @@ def mail_sender(subject, content, mail):
 
 def mail_sending(subject, content, emails):
     for mail in emails:
+        mail = mail.strip()
         if re.fullmatch(regex, mail):
             mail_sender(subject, content, str(mail))

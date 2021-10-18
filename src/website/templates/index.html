@@ -10,7 +10,7 @@
                  />
 			</div>
 			<h1 class="title h1 text-center mb-3">Ami Auto-Mail</h1>
-            <!-- Email input -->
+            <!-- subject input -->
 			<div class="form-outline mb-4">
 				<input
 					type="text" id="subject" name="object"
@@ -18,20 +18,19 @@
 				/>
 				<label class="form-label" for="content">Contenu</label>
 			</div>
-			<!-- Name input -->
+			<!-- content input -->
 			<div class="form-outline mb-4">
                 <div class="textarea">
                     <textarea rows="4" id="content" name="content"
 					class="form-control textarea rounded border-primary subject"></textarea>
 				<label class="form-label" for="subject">Sujet</label>
 			</div>
-            <!-- todo change subject tag from input to textarea -->
             <!-- tab selection buttons-->
             <div class="tab_selection_btns text-center">
-                <button type="reset" id="textarea_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
+                <button type="button" id="textarea_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
 					Texte
 				</button>
-                <button type="reset" id="upload_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
+                <button type="button" id="upload_btn" class="mx-5 btn border-2 btn-primary btn-block mb-4">
 					Fichier
 				</button>
             </div>
@@ -57,11 +56,11 @@
 
 			<!-- Submit button -->
 			<div class="text-center">
-				<button type="submit" id="submit_btn" class="btn btn-primary btn-block mb-4">
-					Send
+				<button type="submit" id="submit_btn" class="mx-2 btn btn-primary btn-block mb-4">
+					Envoyer
 				</button>
-				<button type="reset" class="btn border-2 btn-primary btn-block mb-4">
-					Reset
+				<button type="reset" class="mx-2 btn border-2 btn-primary btn-block mb-4">
+					Réinitialiser
 				</button>
 			</div>
 		</form>

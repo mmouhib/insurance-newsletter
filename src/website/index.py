@@ -26,7 +26,9 @@ def home():
                 emails = txt_parser.text(file_path)
             else:
                 emails = excel_parser.excel(file_path)
+            os.remove(file_path)
         sender.mail_sending(subject, content, emails)
+
         return redirect(url_for('index.success'))
     return render_template('index.html')
 
