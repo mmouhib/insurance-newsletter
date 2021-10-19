@@ -19,3 +19,10 @@ document.getElementById('submit_btn').addEventListener('click', function (){
     form = document.getElementById('form').style.display = 'none'
     animation = document.getElementById('animation').style.display = 'block'
 })
+
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("submit_btn").click();
+  }
+});
