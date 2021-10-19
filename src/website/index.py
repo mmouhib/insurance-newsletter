@@ -17,11 +17,17 @@ def home():
         email = request.form.get('emails').strip()
         emails = email.split("\n")
         file = request.files['file']
+
+        # redirects to error page in case of empty form submission
+        if subject == content == '':
+            return redirect(url_for('index.fail'))
+
         if file:
             cwd = os.getcwd() + r"\website\static\uploads"
             filename = secure_filename(file.filename)
             file_path = os.path.join(cwd, filename)
             file.save(file_path)
+            # checks for the file extension (text/excel)
             if file.filename.rsplit('.', 1)[1].lower() == 'txt':
                 emails = txt_parser.text(file_path)
             else:
@@ -36,3 +42,8 @@ def home():
 @index.route('/success')
 def success():
     return render_template('success.html')
+
+
+@index.route('/fail')
+def fail():
+    return render_template('fail.html')

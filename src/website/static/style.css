@@ -19,14 +19,13 @@ form {
 	width: 40rem;
 	height: 45rem;
 	padding: 2rem;
-	border-radius: 0.8rem;
-	background: rgb(2, 0, 36);
-	background: linear-gradient(
-		50deg,
-		rgb(113, 147, 192) 0%,
-		rgb(209, 194, 212) 100%,
-		rgb(197, 133, 194) 100%
-	);
+	border-radius: 0.4rem;
+    background: rgb(166,144,204);
+    background: linear-gradient(
+            184deg,
+            rgba(166,144,204,0.8575630935968137) 0%,
+            rgba(173,155,200,0.4906163148853291) 50%,
+            rgba(190,168,218,0.9500000683867297) 100%);
 }
 .copyrights {
 	position: fixed;

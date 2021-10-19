@@ -2,8 +2,8 @@
 {% block title %} Success {% endblock %}
 {% block body %}
 <div class="container text-center my-5">
-    <img src="{{ url_for('static', filename = 'img/success.png')}}" class="mx-5" alt="success"/>
-    <h1 class="display-1 font-weight-700 text-center">Envoi réussi</h1>
+    <img src="{{ url_for('static', filename = 'img/fail.png')}}" class="mx-5" alt="success"/>
+    <h1 class="display-1 font-weight-700 text-center">le processus a échoué, veuillez vérifier les entrées du formulaire !</h1>
     <button id="return" class="mx-5 btn btn-danger">Retour à la page d'accueil</button>
 </div>
 <script src="{{ url_for('static', filename = 'process.js')}}"></script>
