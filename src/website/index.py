@@ -1,8 +1,6 @@
 import os
-from src.website.static import sender
-from src.website.static import txt_parser
+from src.website.static.py import txt_parser, sender, excel_parser
 from werkzeug.utils import secure_filename
-from src.website.static import excel_parser
 from flask import (Blueprint, render_template,
                    request, redirect, url_for)
 
@@ -10,6 +8,13 @@ index = Blueprint('index', __name__)
 
 
 @index.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return redirect(url_for('index.home'))
+    return render_template('login.html')
+
+
+@index.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         subject = request.form.get('object')

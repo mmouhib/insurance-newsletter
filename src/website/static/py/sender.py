@@ -1,4 +1,4 @@
-from src.website.static import credentials
+from src.website.static.py import credentials
 import smtplib
 import re
 

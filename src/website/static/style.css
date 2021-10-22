@@ -27,6 +27,25 @@ form {
             rgba(173,155,200,0.4906163148853291) 50%,
             rgba(190,168,218,0.9500000683867297) 100%);
 }
+.form-group{
+    padding-top: 6.5%;
+}
+#login_title{
+    font-family: 'JetBrains Mono', monospace;
+}
+#form2 {
+	width: 30%;
+	height: 50vh;
+	padding: 2rem;
+
+	border-radius: 0.4rem;
+    background: rgb(166,144,204);
+    background: linear-gradient(
+            184deg,
+            rgba(166,144,204,0.8575630935968137) 0%,
+            rgba(173,155,200,0.4906163148853291) 50%,
+            rgba(190,168,218,0.9500000683867297) 100%);
+}
 .copyrights {
 	position: fixed;
 	bottom: 0;

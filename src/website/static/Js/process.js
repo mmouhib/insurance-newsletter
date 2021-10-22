@@ -1,5 +1,5 @@
 document.getElementById('return').addEventListener('click', function () {
-	document.location.href = '/';
+	document.location.href = '/home';
 });
 
 document.addEventListener("keyup", function(event) {
